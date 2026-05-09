@@ -1,34 +1,59 @@
 const Task = require("../models/Task");
+const Project = require("../models/Project");
 
 const getDashboardData = async (req, res) => {
 
    try {
 
-      const totalTasks = await Task.countDocuments();
+      const totalProjects =
+         await Project.countDocuments();
 
-      const completedTasks = await Task.countDocuments({
-         status: "Completed"
-      });
+      const totalTasks =
+         await Task.countDocuments();
 
-      const pendingTasks = await Task.countDocuments({
-         status: "Pending"
-      });
+      const completedTasks =
+         await Task.countDocuments({
+            status: "Completed"
+         });
 
-      const inProgressTasks = await Task.countDocuments({
-         status: "In Progress"
-      });
+      const pendingTasks =
+         await Task.countDocuments({
+            status: "Pending"
+         });
 
-      const overdueTasks = await Task.countDocuments({
-         deadline: { $lt: new Date() },
-         status: { $ne: "Completed" }
-      });
+      const inProgressTasks =
+         await Task.countDocuments({
+            status: "In Progress"
+         });
+
+      const overdueTasks =
+         await Task.countDocuments({
+
+            deadline: {
+               $lt: new Date()
+            },
+
+            status: {
+               $ne: "Completed"
+            }
+
+         });
+
+      const highPriorityTasks =
+         await Task.countDocuments({
+            priority: "High"
+         });
 
       res.status(200).json({
+
+         totalProjects,
          totalTasks,
          completedTasks,
          pendingTasks,
          inProgressTasks,
-         overdueTasks
+         overdueTasks,
+         highPriorityTasks
+
       });
 
    } catch(error){

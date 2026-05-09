@@ -40,11 +40,29 @@ const getTasks = async (req, res) => {
 
    try {
 
-      const tasks = await Task.find()
+      let tasks;
 
-      .populate("project", "title")
+      if(req.user.role === "admin"){
 
-      .populate("assignedTo", "name email");
+         tasks = await Task.find()
+
+         .populate("project", "title")
+
+         .populate("assignedTo", "name email");
+
+      } else {
+
+         tasks = await Task.find({
+
+            assignedTo: req.user.id
+
+         })
+
+         .populate("project", "title")
+
+         .populate("assignedTo", "name email");
+
+      }
 
       res.status(200).json(tasks);
 

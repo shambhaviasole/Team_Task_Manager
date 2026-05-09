@@ -34,9 +34,29 @@ const getProjects = async (req, res) => {
 
    try {
 
-      const projects = await Project.find()
-      .populate("createdBy", "name email")
-      .populate("members", "name email");
+      let projects;
+
+      if(req.user.role === "admin"){
+
+         projects = await Project.find()
+
+         .populate("createdBy", "name email")
+
+         .populate("members", "name email");
+
+      } else {
+
+         projects = await Project.find({
+
+            members: req.user.id
+
+         })
+
+         .populate("createdBy", "name email")
+
+         .populate("members", "name email");
+
+      }
 
       res.status(200).json(projects);
 
