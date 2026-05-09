@@ -1,0 +1,147 @@
+.tasks-container{
+
+    min-height: 100vh;
+
+    padding: 40px;
+
+    background:
+    linear-gradient(
+        rgba(15,23,42,0.88),
+        rgba(15,23,42,0.92)
+    ),
+
+    url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop")
+    center/cover no-repeat;
+
+    color: white;
+}
+
+.tasks-title{
+
+    font-size: 40px;
+
+    margin-bottom: 30px;
+}
+
+.task-form{
+
+    background: rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(12px);
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    margin-bottom: 40px;
+}
+
+.task-input{
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin-bottom: 18px;
+
+    border-radius: 12px;
+
+    border: none;
+
+    background: rgba(255,255,255,0.15);
+
+    color: white;
+
+    outline: none;
+}
+
+.task-input::placeholder{
+    color: #cbd5e1;
+}
+
+.task-btn{
+
+    padding: 12px 24px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+    linear-gradient(
+        to right,
+        #22c55e,
+        #16a34a
+    );
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.task-btn:hover{
+
+    transform: translateY(-3px);
+}
+
+.tasks-grid{
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap: 25px;
+}
+
+.task-card{
+
+    background: rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(10px);
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    transition: 0.4s;
+
+    box-shadow:
+    0px 6px 18px rgba(0,0,0,0.25);
+}
+
+.task-card:hover{
+
+    transform:
+    translateY(-8px);
+
+    background:
+    rgba(255,255,255,0.18);
+}
+
+.status{
+
+    display: inline-block;
+
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    margin-top: 12px;
+
+    font-weight: bold;
+}
+
+.pending{
+    background: #f59e0b;
+}
+
+.progress{
+    background: #3b82f6;
+}
+
+.completed{
+    background: #22c55e;
+}

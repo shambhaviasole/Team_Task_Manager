@@ -1,0 +1,132 @@
+.home-container{
+
+    min-height: 100vh;
+
+    background:
+    linear-gradient(
+        rgba(15,23,42,0.75),
+        rgba(15,23,42,0.85)
+    ),
+
+    url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1600&auto=format&fit=crop")
+    center/cover no-repeat;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: white;
+
+    animation: fadeIn 1s ease;
+}
+
+.home-content{
+
+    text-align: center;
+
+    max-width: 750px;
+
+    padding: 30px;
+
+    animation: slideUp 1s ease;
+}
+
+.home-title{
+
+    font-size: 65px;
+
+    margin-bottom: 20px;
+
+    font-weight: bold;
+}
+
+.home-description{
+
+    font-size: 22px;
+
+    line-height: 1.7;
+
+    margin-bottom: 40px;
+}
+
+.home-buttons{
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+}
+
+.home-btn{
+
+    padding: 15px 35px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    transition: 0.4s;
+}
+
+.login-btn{
+
+    background:
+    linear-gradient(
+        to right,
+        #3b82f6,
+        #6366f1
+    );
+
+    color: white;
+}
+
+.signup-btn{
+
+    background:
+    linear-gradient(
+        to right,
+        #f59e0b,
+        #ea580c
+    );
+
+    color: white;
+}
+
+.home-btn:hover{
+
+    transform:
+    translateY(-5px) scale(1.05);
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+
+}
+
+@keyframes slideUp{
+
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+}

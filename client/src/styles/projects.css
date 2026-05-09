@@ -1,0 +1,110 @@
+.projects-container{
+
+    min-height: 100vh;
+
+    padding: 40px;
+
+    background:
+    linear-gradient(
+        rgba(15,23,42,0.9),
+        rgba(15,23,42,0.92)
+    ),
+
+    url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop")
+    center/cover no-repeat;
+
+    color: white;
+}
+
+.project-form{
+
+    background: rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(10px);
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    margin-bottom: 40px;
+
+    box-shadow:
+    0px 8px 20px rgba(0,0,0,0.25);
+}
+
+.project-input{
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin-bottom: 18px;
+
+    border-radius: 12px;
+
+    border: none;
+
+    background: rgba(255,255,255,0.15);
+
+    color: white;
+
+    outline: none;
+}
+
+.project-input::placeholder{
+    color: #cbd5e1;
+}
+
+.project-btn{
+
+    padding: 14px 25px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+    linear-gradient(
+        to right,
+        #3b82f6,
+        #6366f1
+    );
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.project-btn:hover{
+
+    transform: translateY(-3px);
+}
+
+.project-card{
+
+    background: rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(10px);
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    margin-bottom: 20px;
+
+    transition: 0.4s;
+
+    box-shadow:
+    0px 6px 18px rgba(0,0,0,0.25);
+}
+
+.project-card:hover{
+
+    transform:
+    translateY(-8px);
+
+    background:
+    rgba(255,255,255,0.18);
+}
